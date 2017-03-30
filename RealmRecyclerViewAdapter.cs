@@ -154,15 +154,9 @@ namespace RealmShopDemo.Droid.Adapters
 
         private void AddListener(IRealmCollection<T> data)
         {
-            if (data is IRealmCollection<T>)
-            {
-                IRealmCollection<T> results = (IRealmCollection<T>) data;
-                _notificationSubscriptionToken = results.SubscribeForNotifications(_listener);
-            }
-            else
-            {
-                throw new ArgumentException("RealmCollection not supported: " + data.GetType());
-            }
+            // Only one type of collection in Realm Xamarin
+            IRealmCollection<T> results = data;
+            _notificationSubscriptionToken = results.SubscribeForNotifications(_listener);
         }
 
         private void RemoveListener()
