@@ -170,7 +170,7 @@ namespace RealmShopDemo.Droid.Adapters
 
         private bool IsDataValid()
         {
-            return _adapterData != null /*&& _adapterData.isValid()*/; // Todo: IsManaged function is not available on IRealmCollection (yet)
+            return _adapterData != null && _adapterData.IsValid;
         }
     }
 }
